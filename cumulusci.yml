@@ -1,11 +1,11 @@
-minimum_cumulusci_version: '3.12.2'
+minimum_cumulusci_version: '3.14.0'
 project:
     name: sustcloud
     package:
         name:  sustcloud
         api_version: '48.0'
     source_format: sfdx
-
+    
 tasks:
     robot:
         options:
@@ -17,3 +17,10 @@ tasks:
         options:
             path: robot/sustcloud/tests
             output: robot/sustcloud/doc/sustcloud_tests.html
+flows:
+    dev_org:
+        steps:
+            0:
+                task: dx 
+                options: 
+                    command: 'force:package:install --package 04t3k000001v9DPAAY -w 20'
