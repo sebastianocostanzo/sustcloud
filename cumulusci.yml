@@ -1,0 +1,19 @@
+minimum_cumulusci_version: '3.12.2'
+project:
+    name: sustcloud
+    package:
+        name:  sustcloud
+        api_version: '48.0'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/sustcloud/tests
+            options:
+                outputdir: robot/sustcloud/results
+
+    robot_testdoc:
+        options:
+            path: robot/sustcloud/tests
+            output: robot/sustcloud/doc/sustcloud_tests.html
