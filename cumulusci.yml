@@ -99,8 +99,8 @@ flows:
     #            task: None
 plans:
      install:
-        slug: install
-        title: Install
+        slug: installsust
+        title: InstallSust
         tier: primary
         steps:
             1:
