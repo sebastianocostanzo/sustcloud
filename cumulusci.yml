@@ -5,6 +5,7 @@ project:
         name:  sustcloud
         api_version: '48.0'
     source_format: sfdx
+    repo_url: https://github.com/sebastianocostanzo/sustcloud/
     
 tasks:
     robot:
@@ -97,7 +98,6 @@ flows:
     #    steps:
     #        2:
     #            task: None
-repo_url: https://github.com/sebastianocostanzo/sustcloud/
 plans:
      install:
         slug: Sustainability_Cloud
