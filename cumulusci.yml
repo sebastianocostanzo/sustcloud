@@ -97,9 +97,10 @@ flows:
     #    steps:
     #        2:
     #            task: None
+repo_url: https://github.com/sebastianocostanzo/sustcloud/
 plans:
      install:
-        slug: installsust
+        slug: Sustainability_Cloud
         title: InstallSust
         tier: primary
         steps:
