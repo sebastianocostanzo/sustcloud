@@ -18,9 +18,90 @@ tasks:
             path: robot/sustcloud/tests
             output: robot/sustcloud/doc/sustcloud_tests.html
 flows:
-    dev_org:
+    setup_Sust_Cloud: # using shane sfdx script
+        description: https://github.com/mshanemc/sustainability/blob/master/orgInit.sh
+        steps:
+            1:
+                task: dx 
+                options: 
+                    command: 'force:package:install --package 04t3k000001yv66AAA -w 20'            
+            2:
+                task: dx 
+                options: 
+                    command: 'shane:user:psl -l User -g User -n sustain_app_SustainabilityCloudPsl'
+            3:
+                task: dx 
+                options: 
+                    command: 'force:user:permset:assign -n SustainabilityAnalytics'            
+            4:
+                task: dx 
+                options: 
+                    command: 'force:user:permset:assign -n SustainabilityAppAuditor'
+            5:
+                task: dx 
+                options: 
+                    command: 'force:user:permset:assign -n SustainabilityAppManager'            
+            6:
+                task: dx 
+                options: 
+                    command: 'force:user:permset:assign -n SustainabilityCloud'
+            7:
+                task: dx 
+                options: 
+                    command: 'shane:user:psl -l User -g Integration -n InsightsBuilderPsl'            
+            8:
+                task: dx 
+                options: 
+                    command: 'shane:user:permset:assign -l User -g Integration -n EinsteinAnalyticsUser'
+            9:
+                task: dx 
+                options: 
+                    command: 'shane:user:permset:assign -l User -g Integration -n SustainabilityAnalytics'                                     
+    dev_org:        
+        steps:
+            0:
+                flow: setup_Sust_Cloud 
+    qa_org:
         steps:
             0:
                 task: dx 
                 options: 
-                    command: 'force:package:install --package 04t3k000001v9DPAAY -w 20'
+                    command: 'force:package:install --package 04t3k000001yv66AAA -w 20'
+    ci_release:
+        steps:
+            0:
+                task: dx 
+                options: 
+                    command: 'force:package:install --package 04t3k000001yv66AAA -w 20'
+    config_qa:
+        steps:
+            3:
+                task: load_dataset
+    config_dev:
+        steps:
+            3:
+                task: load_dataset
+            4:
+                task: dx 
+                options: 
+                    command: 'force:user:permset:assign -n SustainabilityCloudAdmin'
+            5:
+                task: dx 
+                options: 
+                    command: 'analytics:app:create -f assets/analyticsAppCreateDef.json'            
+            6:
+                task: dx 
+                options: 
+                    command: 'shane:analytics:app:share -n Sustainability --org'
+    #install_prod:
+    #    steps:
+    #        2:
+    #            task: None
+plans:
+     install:
+        slug: install
+        title: Install
+        tier: primary
+        steps:
+            1:
+               flow: dev_org 

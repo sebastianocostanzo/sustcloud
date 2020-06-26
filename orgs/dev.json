@@ -1,10 +1,12 @@
 {
   "orgName": "sustcloud - Dev Org",
   "edition": "Developer",
+  "features": ["SustainabilityCloud","AnalyticsAdminPerms","DevelopmentWave","EinsteinAnalyticsPlus"],
   "settings": {
     "lightningExperienceSettings": {
       "enableS1DesktopEnabled": true
     },
+  
     "chatterSettings": {
       "enableChatter": true
     },

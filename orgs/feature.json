@@ -1,15 +1,17 @@
 {
   "orgName": "sustcloud - Feature Test Org",
   "edition": "Developer",
+  "features": ["SustainabilityCloud","AnalyticsAdminPerms","DevelopmentWave","EinsteinAnalyticsPlus"],
   "settings": {
     "lightningExperienceSettings": {
       "enableS1DesktopEnabled": true
     },
+  
     "chatterSettings": {
       "enableChatter": true
     },
     "userManagementSettings": {
-      "enableNewProfileUI": true
+      "enableNewProfileUI": false
     },
     "securitySettings": {
       "enableAdminLoginAsAnyUser": true,

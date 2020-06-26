@@ -1,10 +1,12 @@
 {
   "orgName": "sustcloud - Release Test Org",
   "edition": "Enterprise",
+  "features": ["SustainabilityCloud","AnalyticsAdminPerms","DevelopmentWave","EinsteinAnalyticsPlus"],
   "settings": {
     "lightningExperienceSettings": {
       "enableS1DesktopEnabled": true
     },
+  
     "chatterSettings": {
       "enableChatter": true
     },
@@ -16,5 +18,9 @@
       "sessionSettings": {
         "forceRelogin": false
       }
-    }  }
+    },
+    "languageSettings": {
+      "enableTranslationWorkbench": true
+    }
+  }
 }

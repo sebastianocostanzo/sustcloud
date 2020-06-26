@@ -1,3 +1,36 @@
+Insert sustain_app__Asset__c:
+  sf_object: sustain_app__Asset__c
+  table: sustain_app__Asset__c
+  fields:
+    Id: sf_id
+    Name: Name
+    RecordTypeId: RecordTypeId
+    sustain_app__AssetType__c: sustain_app__AssetType__c
+    sustain_app__BusinessRegion__c: sustain_app__BusinessRegion__c
+    sustain_app__CBECSDivision__c: sustain_app__CBECSDivision__c
+    sustain_app__City__c: sustain_app__City__c
+    sustain_app__Country__c: sustain_app__Country__c
+    sustain_app__Description__c: sustain_app__Description__c
+    sustain_app__FacilityId__c: sustain_app__FacilityId__c
+    sustain_app__GreenBuildingCertified__c: sustain_app__GreenBuildingCertified__c
+    sustain_app__GridSubregion__c: sustain_app__GridSubregion__c
+    sustain_app__LeaseExpirationDate__c: sustain_app__LeaseExpirationDate__c
+    sustain_app__LeaseID__c: sustain_app__LeaseID__c
+    sustain_app__Occupied_Building_Floor_Area_Unit__c: sustain_app__Occupied_Building_Floor_Area_Unit__c
+    sustain_app__Occupied_Building_Floor_Area__c: sustain_app__Occupied_Building_Floor_Area__c
+    sustain_app__Occupied_Building_Floor_Area_m2__c: sustain_app__Occupied_Building_Floor_Area_m2__c
+    sustain_app__Occupied_Rented_Floor_Area__c: sustain_app__Occupied_Rented_Floor_Area__c
+    sustain_app__OwnedAsset__c: sustain_app__OwnedAsset__c
+    sustain_app__State__c: sustain_app__State__c
+    sustain_app__StreetAddress2__c: sustain_app__StreetAddress2__c
+    sustain_app__StreetAddress__c: sustain_app__StreetAddress__c
+    sustain_app__Total_Building_Floor_Area__c: sustain_app__Total_Building_Floor_Area__c
+    sustain_app__VehicleID__c: sustain_app__VehicleID__c
+    sustain_app__ZipCode__c: sustain_app__ZipCode__c
+  lookups:
+    sustain_app__ParentAsset__c:
+      table: sustain_app__Asset__c
+      after: Insert sustain_app__Asset__c
 Insert sustain_app__EmissionFactorOther__c:
   sf_object: sustain_app__EmissionFactorOther__c
   table: sustain_app__EmissionFactorOther__c
@@ -105,92 +138,6 @@ Insert sustain_app__EmissionFactorOther__c:
     sustain_app__jet_fuel_ch4_factor_g_gal__c: sustain_app__jet_fuel_ch4_factor_g_gal__c
     sustain_app__jet_fuel_co2_factor_g__c: sustain_app__jet_fuel_co2_factor_g__c
     sustain_app__jet_fuel_n2o_factor_g_gal__c: sustain_app__jet_fuel_n2o_factor_g_gal__c
-Insert sustain_app__EmissionFactorElectricity__c:
-  sf_object: sustain_app__EmissionFactorElectricity__c
-  table: sustain_app__EmissionFactorElectricity__c
-  fields:
-    Id: sf_id
-    Name: Name
-    sustain_app__BiomassMixMarketBased__c: sustain_app__BiomassMixMarketBased__c
-    sustain_app__BiomassMix__c: sustain_app__BiomassMix__c
-    sustain_app__CH4LbGWh__c: sustain_app__CH4LbGWh__c
-    sustain_app__CH4_Unit__c: sustain_app__CH4_Unit__c
-    sustain_app__CH4__c: sustain_app__CH4__c
-    sustain_app__CO2_MT_MWh__c: sustain_app__CO2_MT_MWh__c
-    sustain_app__CO2_Unit__c: sustain_app__CO2_Unit__c
-    sustain_app__CO2__c: sustain_app__CO2__c
-    sustain_app__CO2eTotalLbMWhMarketBased__c: sustain_app__CO2eTotalLbMWhMarketBased__c
-    sustain_app__CO2eTotalLbMWh__c: sustain_app__CO2eTotalLbMWh__c
-    sustain_app__CO2e_MarketBaseTotal_MtMWh__c: sustain_app__CO2e_MarketBaseTotal_MtMWh__c
-    sustain_app__CO2e_MarketBasedTotal_Unit__c: sustain_app__CO2e_MarketBasedTotal_Unit__c
-    sustain_app__CO2e_MarketBasedTotal__c: sustain_app__CO2e_MarketBasedTotal__c
-    sustain_app__CO2e_Total_MT_MWh__c: sustain_app__CO2e_Total_MT_MWh__c
-    sustain_app__CO2e_Total_Unit__c: sustain_app__CO2e_Total_Unit__c
-    sustain_app__CO2e_Total__c: sustain_app__CO2e_Total__c
-    sustain_app__City__c: sustain_app__City__c
-    sustain_app__CoalMixMarketBased__c: sustain_app__CoalMixMarketBased__c
-    sustain_app__CoalMix__c: sustain_app__CoalMix__c
-    sustain_app__Country__c: sustain_app__Country__c
-    sustain_app__DataSource__c: sustain_app__DataSource__c
-    sustain_app__EmissionFactorUpdateYear__c: sustain_app__EmissionFactorUpdateYear__c
-    sustain_app__FiscalYear__c: sustain_app__FiscalYear__c
-    sustain_app__GasMixMarketBased__c: sustain_app__GasMixMarketBased__c
-    sustain_app__GasMix__c: sustain_app__GasMix__c
-    sustain_app__GeothermalMixMarketBased__c: sustain_app__GeothermalMixMarketBased__c
-    sustain_app__GeothermalMix__c: sustain_app__GeothermalMix__c
-    sustain_app__HydroMixMarketBased__c: sustain_app__HydroMixMarketBased__c
-    sustain_app__HydroMix__c: sustain_app__HydroMix__c
-    sustain_app__N2OLbGWh__c: sustain_app__N2OLbGWh__c
-    sustain_app__N2O_Unit__c: sustain_app__N2O_Unit__c
-    sustain_app__N2O__c: sustain_app__N2O__c
-    sustain_app__NuclearMixMarketBased__c: sustain_app__NuclearMixMarketBased__c
-    sustain_app__NuclearMix__c: sustain_app__NuclearMix__c
-    sustain_app__OilMixMarketBased__c: sustain_app__OilMixMarketBased__c
-    sustain_app__OilMix__c: sustain_app__OilMix__c
-    sustain_app__OtherFossilFuelMixMarketBased__c: sustain_app__OtherFossilFuelMixMarketBased__c
-    sustain_app__OtherFossilFuelMix__c: sustain_app__OtherFossilFuelMix__c
-    sustain_app__OtherFuelMixMarketBased__c: sustain_app__OtherFuelMixMarketBased__c
-    sustain_app__OtherUnknownPurchasedFuelMix__c: sustain_app__OtherUnknownPurchasedFuelMix__c
-    sustain_app__SolarMixMarketBased__c: sustain_app__SolarMixMarketBased__c
-    sustain_app__SolarMix__c: sustain_app__SolarMix__c
-    sustain_app__State__c: sustain_app__State__c
-    sustain_app__SubRegion__c: sustain_app__SubRegion__c
-    sustain_app__WindMixMarketBased__c: sustain_app__WindMixMarketBased__c
-    sustain_app__WindMix__c: sustain_app__WindMix__c
-    sustain_app__ZipCode__c: sustain_app__ZipCode__c
-Insert sustain_app__Asset__c:
-  sf_object: sustain_app__Asset__c
-  table: sustain_app__Asset__c
-  fields:
-    Id: sf_id
-    Name: Name
-    RecordTypeId: RecordTypeId
-    sustain_app__AssetType__c: sustain_app__AssetType__c
-    sustain_app__BusinessRegion__c: sustain_app__BusinessRegion__c
-    sustain_app__CBECSDivision__c: sustain_app__CBECSDivision__c
-    sustain_app__City__c: sustain_app__City__c
-    sustain_app__Country__c: sustain_app__Country__c
-    sustain_app__Description__c: sustain_app__Description__c
-    sustain_app__FacilityId__c: sustain_app__FacilityId__c
-    sustain_app__GreenBuildingCertified__c: sustain_app__GreenBuildingCertified__c
-    sustain_app__GridSubregion__c: sustain_app__GridSubregion__c
-    sustain_app__LeaseExpirationDate__c: sustain_app__LeaseExpirationDate__c
-    sustain_app__LeaseID__c: sustain_app__LeaseID__c
-    sustain_app__Occupied_Building_Floor_Area_Unit__c: sustain_app__Occupied_Building_Floor_Area_Unit__c
-    sustain_app__Occupied_Building_Floor_Area__c: sustain_app__Occupied_Building_Floor_Area__c
-    sustain_app__Occupied_Building_Floor_Area_m2__c: sustain_app__Occupied_Building_Floor_Area_m2__c
-    sustain_app__Occupied_Rented_Floor_Area__c: sustain_app__Occupied_Rented_Floor_Area__c
-    sustain_app__OwnedAsset__c: sustain_app__OwnedAsset__c
-    sustain_app__State__c: sustain_app__State__c
-    sustain_app__StreetAddress2__c: sustain_app__StreetAddress2__c
-    sustain_app__StreetAddress__c: sustain_app__StreetAddress__c
-    sustain_app__Total_Building_Floor_Area__c: sustain_app__Total_Building_Floor_Area__c
-    sustain_app__VehicleID__c: sustain_app__VehicleID__c
-    sustain_app__ZipCode__c: sustain_app__ZipCode__c
-  lookups:
-    sustain_app__ParentAsset__c:
-      table: sustain_app__Asset__c
-      after: Insert sustain_app__Asset__c
 Insert sustain_app__EmissionFactorScope3__c:
   sf_object: sustain_app__EmissionFactorScope3__c
   table: sustain_app__EmissionFactorScope3__c
@@ -264,6 +211,59 @@ Insert sustain_app__Contact__c:
     sustain_app__Email__c: sustain_app__Email__c
     sustain_app__Phone__c: sustain_app__Phone__c
     sustain_app__Title__c: sustain_app__Title__c
+Insert sustain_app__EmissionFactorElectricity__c:
+  sf_object: sustain_app__EmissionFactorElectricity__c
+  table: sustain_app__EmissionFactorElectricity__c
+  fields:
+    Id: sf_id
+    Name: Name
+    sustain_app__BiomassMixMarketBased__c: sustain_app__BiomassMixMarketBased__c
+    sustain_app__BiomassMix__c: sustain_app__BiomassMix__c
+    sustain_app__CH4LbGWh__c: sustain_app__CH4LbGWh__c
+    sustain_app__CH4_Unit__c: sustain_app__CH4_Unit__c
+    sustain_app__CH4__c: sustain_app__CH4__c
+    sustain_app__CO2_MT_MWh__c: sustain_app__CO2_MT_MWh__c
+    sustain_app__CO2_Unit__c: sustain_app__CO2_Unit__c
+    sustain_app__CO2__c: sustain_app__CO2__c
+    sustain_app__CO2eTotalLbMWhMarketBased__c: sustain_app__CO2eTotalLbMWhMarketBased__c
+    sustain_app__CO2eTotalLbMWh__c: sustain_app__CO2eTotalLbMWh__c
+    sustain_app__CO2e_MarketBaseTotal_MtMWh__c: sustain_app__CO2e_MarketBaseTotal_MtMWh__c
+    sustain_app__CO2e_MarketBasedTotal_Unit__c: sustain_app__CO2e_MarketBasedTotal_Unit__c
+    sustain_app__CO2e_MarketBasedTotal__c: sustain_app__CO2e_MarketBasedTotal__c
+    sustain_app__CO2e_Total_MT_MWh__c: sustain_app__CO2e_Total_MT_MWh__c
+    sustain_app__CO2e_Total_Unit__c: sustain_app__CO2e_Total_Unit__c
+    sustain_app__CO2e_Total__c: sustain_app__CO2e_Total__c
+    sustain_app__City__c: sustain_app__City__c
+    sustain_app__CoalMixMarketBased__c: sustain_app__CoalMixMarketBased__c
+    sustain_app__CoalMix__c: sustain_app__CoalMix__c
+    sustain_app__Country__c: sustain_app__Country__c
+    sustain_app__DataSource__c: sustain_app__DataSource__c
+    sustain_app__EmissionFactorUpdateYear__c: sustain_app__EmissionFactorUpdateYear__c
+    sustain_app__FiscalYear__c: sustain_app__FiscalYear__c
+    sustain_app__GasMixMarketBased__c: sustain_app__GasMixMarketBased__c
+    sustain_app__GasMix__c: sustain_app__GasMix__c
+    sustain_app__GeothermalMixMarketBased__c: sustain_app__GeothermalMixMarketBased__c
+    sustain_app__GeothermalMix__c: sustain_app__GeothermalMix__c
+    sustain_app__HydroMixMarketBased__c: sustain_app__HydroMixMarketBased__c
+    sustain_app__HydroMix__c: sustain_app__HydroMix__c
+    sustain_app__N2OLbGWh__c: sustain_app__N2OLbGWh__c
+    sustain_app__N2O_Unit__c: sustain_app__N2O_Unit__c
+    sustain_app__N2O__c: sustain_app__N2O__c
+    sustain_app__NuclearMixMarketBased__c: sustain_app__NuclearMixMarketBased__c
+    sustain_app__NuclearMix__c: sustain_app__NuclearMix__c
+    sustain_app__OilMixMarketBased__c: sustain_app__OilMixMarketBased__c
+    sustain_app__OilMix__c: sustain_app__OilMix__c
+    sustain_app__OtherFossilFuelMixMarketBased__c: sustain_app__OtherFossilFuelMixMarketBased__c
+    sustain_app__OtherFossilFuelMix__c: sustain_app__OtherFossilFuelMix__c
+    sustain_app__OtherFuelMixMarketBased__c: sustain_app__OtherFuelMixMarketBased__c
+    sustain_app__OtherUnknownPurchasedFuelMix__c: sustain_app__OtherUnknownPurchasedFuelMix__c
+    sustain_app__SolarMixMarketBased__c: sustain_app__SolarMixMarketBased__c
+    sustain_app__SolarMix__c: sustain_app__SolarMix__c
+    sustain_app__State__c: sustain_app__State__c
+    sustain_app__SubRegion__c: sustain_app__SubRegion__c
+    sustain_app__WindMixMarketBased__c: sustain_app__WindMixMarketBased__c
+    sustain_app__WindMix__c: sustain_app__WindMix__c
+    sustain_app__ZipCode__c: sustain_app__ZipCode__c
 Insert sustain_app__ServiceProvider__c:
   sf_object: sustain_app__ServiceProvider__c
   table: sustain_app__ServiceProvider__c
@@ -286,12 +286,24 @@ Insert sustain_app__AssetContact__c:
       table: sustain_app__Asset__c
     sustain_app__SustainabilityContact__c:
       table: sustain_app__Contact__c
+Insert sustain_app__Contract__c:
+  sf_object: sustain_app__Contract__c
+  table: sustain_app__Contract__c
+  fields:
+    Id: sf_id
+    Name: Name
+    sustain_app__Contract_Type__c: sustain_app__Contract_Type__c
+    sustain_app__Renewable_Energy_Project_Type__c: sustain_app__Renewable_Energy_Project_Type__c
+  lookups:
+    sustain_app__SustainabilityServiceProvider__c:
+      table: sustain_app__ServiceProvider__c
 Insert sustain_app__ConsumptionReport__c:
   sf_object: sustain_app__ConsumptionReport__c
   table: sustain_app__ConsumptionReport__c
   fields:
     Id: sf_id
     Name: Name
+    CFextID__c: CFextID__c
     RecordTypeId: RecordTypeId
     sustain_app__Allocation_Status__c: sustain_app__Allocation_Status__c
     sustain_app__Annual_Contract_Power_kw__c: sustain_app__Annual_Contract_Power_kw__c
@@ -364,25 +376,12 @@ Insert sustain_app__ConsumptionReport__c:
   lookups:
     sustain_app__Asset__c:
       table: sustain_app__Asset__c
-    sustain_app__CBECs_Reference_Data__c:
-      table: sustain_app__EmissionFactorOther__c
     sustain_app__Carbon_Source_Approver__c:
       table: sustain_app__Contact__c
     sustain_app__PY_Annual_Consumption_Report__c:
       table: sustain_app__ConsumptionReport__c
       after: Insert sustain_app__ConsumptionReport__c
     sustain_app__ServiceProvider__c:
-      table: sustain_app__ServiceProvider__c
-Insert sustain_app__Contract__c:
-  sf_object: sustain_app__Contract__c
-  table: sustain_app__Contract__c
-  fields:
-    Id: sf_id
-    Name: Name
-    sustain_app__Contract_Type__c: sustain_app__Contract_Type__c
-    sustain_app__Renewable_Energy_Project_Type__c: sustain_app__Renewable_Energy_Project_Type__c
-  lookups:
-    sustain_app__SustainabilityServiceProvider__c:
       table: sustain_app__ServiceProvider__c
 Insert sustain_app__EnergyConsumption__c:
   sf_object: sustain_app__EnergyConsumption__c
@@ -391,6 +390,7 @@ Insert sustain_app__EnergyConsumption__c:
     Id: sf_id
     Name: Name
     RecordTypeId: RecordTypeId
+    externalID__c: externalID__c
     sustain_app__AirTravelEmissions__c: sustain_app__AirTravelEmissions__c
     sustain_app__Aircraft_Fuel_Economy_Unit__c: sustain_app__Aircraft_Fuel_Economy_Unit__c
     sustain_app__Aircraft_Fuel_Economy_Value__c: sustain_app__Aircraft_Fuel_Economy_Value__c
@@ -525,12 +525,16 @@ Insert sustain_app__EnergyConsumption__c:
       table: sustain_app__Contract__c
     sustain_app__ElectricityEmissionFactor__c:
       table: sustain_app__EmissionFactorElectricity__c
+      key_field: sustain_app__EmissionFactorElectricity__c
     sustain_app__EmissionFactorScope3__c:
       table: sustain_app__EmissionFactorScope3__c
+      key_field: sustain_app__EmissionFactorScope3__c
     sustain_app__Other_Emission_Factor__c:
       table: sustain_app__EmissionFactorOther__c
+      key_field: sustain_app__Other_Emission_Factor__c
     sustain_app__Refrigerant_GWP_Factor__c:
       table: sustain_app__EmissionFactorOther__c
+      key_field: sustain_app__Other_Emission_Factor__c
     sustain_app__ServiceProvider__c:
       table: sustain_app__ServiceProvider__c
 Insert sustain_app__ConsumptionReportItem__c:
@@ -540,8 +544,10 @@ Insert sustain_app__ConsumptionReportItem__c:
   lookups:
     sustain_app__ConsumptionReport__c:
       table: sustain_app__ConsumptionReport__c
+      key_field: sustain_app__ConsumptionReport__c
     sustain_app__EnergyConsumption__c:
       table: sustain_app__EnergyConsumption__c
+      key_field: sustain_app__EnergyConsumption__c
 Insert sustain_app__ExtrapolationLog__c:
   sf_object: sustain_app__ExtrapolationLog__c
   table: sustain_app__ExtrapolationLog__c
