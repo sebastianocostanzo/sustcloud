@@ -8,8 +8,8 @@ project:
     git:
        repo_url: 'https://github.com/sebastianocostanzo/sustcloud'    
     dependencies:
-       - namespace: sustain_app
-         version: '1.10'
+       - namespace: appyback
+         version: '1.7'
 tasks:
     robot:
         options:
