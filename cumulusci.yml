@@ -102,6 +102,10 @@ flows:
         steps:
             2:
                 task: None
+    config_managed:
+        steps:
+            3:
+                task: load_dataset
 plans:
      install:
         slug: install
