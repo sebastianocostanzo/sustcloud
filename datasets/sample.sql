@@ -17,7 +17,7 @@ CREATE TABLE "Company_News__c_rt_mapping" (
 	developer_name VARCHAR(255), 
 	PRIMARY KEY (record_type_id)
 );
-INSERT INTO "Company_News__c_rt_mapping" VALUES('01217000001iQDhAAM','Company_New_RT');
+INSERT INTO "Company_News__c_rt_mapping" VALUES('01217000001iQDhAAM','appyback__Company_New_RT');
 CREATE TABLE "Employee_Request__c" (
 	sf_id VARCHAR(255) NOT NULL, 
 	"Approved_Date__c" VARCHAR(255), 
