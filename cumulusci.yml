@@ -6,8 +6,10 @@ project:
         api_version: '48.0'
     source_format: sfdx
     git:
-       repo_url: https://github.com/sebastianocostanzo/sustcloud/
-    
+       repo_url: 'https://github.com/sebastianocostanzo/sustcloud'    
+    dependencies:
+       - namespace: sustain_app
+         version: 1.10
 tasks:
     robot:
         options:
@@ -101,8 +103,8 @@ flows:
     #            task: None
 plans:
      install:
-        slug: Sustainability_Cloud
-        title: SustainabilityCloud
+        slug: install
+        title: Install
         tier: primary
         steps:
             1:
