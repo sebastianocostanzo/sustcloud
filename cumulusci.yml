@@ -9,7 +9,7 @@ project:
        repo_url: 'https://github.com/sebastianocostanzo/sustcloud'    
     dependencies:
        - namespace: sustain_app
-         version: 1.10
+         version: '1.10'
 tasks:
     robot:
         options:
