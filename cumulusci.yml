@@ -9,7 +9,7 @@ project:
        repo_url: 'https://github.com/sebastianocostanzo/sustcloud'    
     dependencies:
        - namespace: appyback
-         version: '1.7'
+         version: '1.8'
 tasks:
     robot:
         options:
@@ -22,49 +22,49 @@ tasks:
             path: robot/sustcloud/tests
             output: robot/sustcloud/doc/sustcloud_tests.html
 flows:
-    #setup_Sust_Cloud: # using shane sfdx script
+    setup_Sust_Cloud_dev: # using shane sfdx script
         #description: https://github.com/mshanemc/sustainability/blob/master/orgInit.sh
-        #steps:
-           # 1:
-           #     task: dx 
-           #     options: 
-           #         command: 'force:package:install --package 04t3k000001yv66AAA -w 20'            
-           # 2:
-           #     task: dx 
-           #     options: 
-           #         command: 'shane:user:psl -l User -g User -n sustain_app_SustainabilityCloudPsl'
-           # 3:
-           #     task: dx 
-           #     options: 
-           #         command: 'force:user:permset:assign -n SustainabilityAnalytics'            
-           # 4:
-           #     task: dx 
-           #     options: 
-           #         command: 'force:user:permset:assign -n SustainabilityAppAuditor'
-           # 5:
-           #     task: dx 
-           #     options: 
-           #         command: 'force:user:permset:assign -n SustainabilityAppManager'            
-           # 6:
-           #     task: dx 
-           #     options: 
-           #         command: 'force:user:permset:assign -n SustainabilityCloud'
-           # 7:
-           #     task: dx 
-           #     options: 
-           #         command: 'shane:user:psl -l User -g Integration -n InsightsBuilderPsl'            
-           # 8:
-           #     task: dx 
-           #     options: 
-           #         command: 'shane:user:permset:assign -l User -g Integration -n EinsteinAnalyticsUser'
-           # 9:
-           #     task: dx 
-           #     options: 
-           #         command: 'shane:user:permset:assign -l User -g Integration -n SustainabilityAnalytics'                                     
-    #dev_org:        
-    #    steps:
-    #        0:
-    #            flow: setup_Sust_Cloud 
+        steps:
+            1:
+                task: dx 
+                options: 
+                    command: 'force:package:install --package 04t3k000001yv66AAA -w 20'            
+            2:
+                task: dx 
+                options: 
+                    command: 'shane:user:psl -l User -g User -n sustain_app_SustainabilityCloudPsl'
+            3:
+                task: dx 
+                options: 
+                    command: 'force:user:permset:assign -n SustainabilityAnalytics'            
+            4:
+                task: dx 
+                options: 
+                    command: 'force:user:permset:assign -n SustainabilityAppAuditor'
+            5:
+                task: dx 
+                options: 
+                    command: 'force:user:permset:assign -n SustainabilityAppManager'            
+            6:
+                task: dx 
+                options: 
+                    command: 'force:user:permset:assign -n SustainabilityCloud'
+            7:
+                task: dx 
+                options: 
+                    command: 'shane:user:psl -l User -g Integration -n InsightsBuilderPsl'            
+            8:
+                task: dx 
+                options: 
+                    command: 'shane:user:permset:assign -l User -g Integration -n EinsteinAnalyticsUser'
+            9:
+                task: dx 
+                options: 
+                    command: 'shane:user:permset:assign -l User -g Integration -n SustainabilityAnalytics'                                     
+    dev_org:        
+        steps:
+            0:
+                flow: setup_Sust_Cloud_dev 
     qa_org:
         steps:
             0:
@@ -108,4 +108,4 @@ plans:
         tier: primary
         steps:
             1:
-               flow: dev_org 
+               flow: install_prod 
