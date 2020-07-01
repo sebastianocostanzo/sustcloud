@@ -98,10 +98,10 @@ flows:
                 task: dx 
                 options: 
                     command: 'shane:analytics:app:share -n Sustainability --org'
-    #install_prod:
-    #    steps:
-    #        2:
-    #            task: None
+    install_prod:
+        steps:
+            2:
+                task: None
 plans:
      install:
         slug: install
