@@ -73,7 +73,7 @@ Insert Location_Administration__c:
       table: Location__c
 Insert Employee_Request__c:
   sf_object: appyback__Employee_Request__c
-  table: appyback__Employee_Request__c
+  table: Employee_Request__c
   fields:
     Id: sf_id
     Approved_Date__c: appyback__Approved_Date__c
