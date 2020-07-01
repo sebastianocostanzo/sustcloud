@@ -6,7 +6,7 @@ project:
         api_version: '48.0'
     source_format: sfdx
     git:
-       repo_url: https://github.com/sebastianocostanzo/sustcloud
+       repo_url: 'https://github.com/sebastianocostanzo/sustcloud'
     dependencies:
        - namespace: appyback
          version: '1.8'
