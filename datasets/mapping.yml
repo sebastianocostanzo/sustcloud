@@ -42,7 +42,6 @@ Insert Location__c:
     Street_Address__c: appyback__Street_Address__c
     ZIP_Code__c: appyback__ZIP_Code__c
 Insert Location_Daily_Info__c:
-    Street_Address__c: appyback__Street_Address__c
   sf_object: appyback__Location_Daily_Info__c
   table: Location_Daily_Info__c
   fields:
