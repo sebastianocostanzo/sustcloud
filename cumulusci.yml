@@ -10,7 +10,7 @@ project:
        prefix_release: rel/
     dependencies:
        - namespace: appyback
-         version: '1.8'
+         version: '1.9'
 tasks:
     robot:
         options:
