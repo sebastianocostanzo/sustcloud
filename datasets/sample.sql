@@ -6,12 +6,11 @@ CREATE TABLE "appyback__Company_News__c" (
 	"appyback__Headline__c" VARCHAR(255), 
 	"appyback__News_Type__c" VARCHAR(255), 
 	"appyback__Public__c" VARCHAR(255), 
-	"RecordTypeId" VARCHAR(255), 
 	"appyback__Status__c" VARCHAR(255), 
 	PRIMARY KEY (sf_id)
 );
-INSERT INTO "appyback__Company_News__c" VALUES('a0017000006qQ7cAAE','2020-06-22','Office will open at 8:00 AM and close at 7:00 PM. Please respect the rules.','Opening office hours','Office','true','','New');
-INSERT INTO "appyback__Company_News__c" VALUES('a0017000006qPzHAAU','2020-06-23','Building will be sanitised at 1:00 PM, please leave you desk for 30 minutes','Latest News','Office','true','','Urgent');
+INSERT INTO "appyback__Company_News__c" VALUES('a0017000006qQ7cAAE','2020-06-22','Office will open at 8:00 AM and close at 7:00 PM. Please respect the rules.','Opening office hours','Office','true','New');
+INSERT INTO "appyback__Company_News__c" VALUES('a0017000006qPzHAAU','2020-06-23','Building will be sanitised at 1:00 PM, please leave you desk for 30 minutes','Latest News','Office','true','Urgent');
 CREATE TABLE "appyback__Employee_Request__c" (
 	sf_id VARCHAR(255) NOT NULL, 
 	"appyback__Approved_Date__c" VARCHAR(255), 
