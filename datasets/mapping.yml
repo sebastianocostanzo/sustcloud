@@ -3,7 +3,6 @@ Insert appyback__Company_News__c:
   table: appyback__Company_News__c
   fields:
     Id: sf_id
-    RecordTypeId: RecordTypeId
     appyback__Date_Posted__c: appyback__Date_Posted__c
     appyback__Description__c: appyback__Description__c
     appyback__Headline__c: appyback__Headline__c
