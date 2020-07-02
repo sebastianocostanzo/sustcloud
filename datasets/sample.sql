@@ -50,9 +50,9 @@ CREATE TABLE "appyback__Location_Administration__c" (
 	appyback__location__c VARCHAR(255), 
 	PRIMARY KEY (sf_id)
 );
-INSERT INTO "Location_Administration__c" VALUES('a021700000I6YOVAA3','2020-07-31','1.0','5.0','2020-06-23','New','50.0','50.0','a041700000K58m1AAB');
-INSERT INTO "Location_Administration__c" VALUES('a021700000I6YOQAA3','2020-08-31','2.0','20.0','2020-06-23','New','300.0','300.0','a041700000K4xAKAAZ');
-CREATE TABLE "Location_Daily_Info__c" (
+INSERT INTO "appyback__Location_Administration__c" VALUES('a021700000I6YOVAA3','2020-07-31','1.0','5.0','2020-06-23','New','50.0','50.0','a041700000K58m1AAB');
+INSERT INTO "appyback__Location_Administration__c" VALUES('a021700000I6YOQAA3','2020-08-31','2.0','20.0','2020-06-23','New','300.0','300.0','a041700000K4xAKAAZ');
+CREATE TABLE "appyback__Location_Daily_Info__c" (
 	sf_id VARCHAR(255) NOT NULL, 
 	"appyback__Date__c" VARCHAR(255), 
 	"appyback__Number_of_Sanifications__c" VARCHAR(255), 
@@ -173,7 +173,7 @@ INSERT INTO "appyback__Location_Daily_Info__c" VALUES('a031700000FHLe5AAH','2020
 INSERT INTO "appyback__Location_Daily_Info__c" VALUES('a031700000FHLe6AAH','2020-06-30','2.0','20.0','300.0','300.0','300.0','300.0','a041700000K4xAKAAZ');
 INSERT INTO "appyback__Location_Daily_Info__c" VALUES('a031700000FHLe7AAH','2020-07-01','2.0','20.0','300.0','300.0','300.0','300.0','a041700000K4xAKAAZ');
 INSERT INTO "appyback__Location_Daily_Info__c" VALUES('a031700000FHLe8AAH','2020-07-02','2.0','20.0','300.0','300.0','300.0','300.0','a041700000K4xAKAAZ');
-CREATE TABLE "Location__c" (
+CREATE TABLE "appyback__Location__c" (
 	sf_id VARCHAR(255) NOT NULL, 
 	"Name" VARCHAR(255), 
 	"appyback__City__c" VARCHAR(255), 
