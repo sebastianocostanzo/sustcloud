@@ -8,9 +8,9 @@ project:
     git:
        repo_url: 'https://github.com/sebastianocostanzo/sustcloud'
        prefix_release: rel/
-    dependencies:
-       - namespace: appyback
-         version: '1.9'
+    #dependencies:
+    #   - namespace: appyback
+    #     version: '1.9'
 tasks:
     robot:
         options:
@@ -30,10 +30,10 @@ flows:
                 task: dx 
                 options: 
                     command: 'force:package:install --package 04t3k000001yv66AAA -w 20'            
-            2:
-                task: dx 
-                options: 
-                    command: 'shane:user:psl -l User -g User -n sustain_app_SustainabilityCloudPsl'
+            #2:
+            #    task: dx 
+            #    options: 
+            #        command: 'shane:user:psl -l User -g User -n sustain_app_SustainabilityCloudPsl'
             3:
                 task: dx 
                 options: 
@@ -50,18 +50,18 @@ flows:
                 task: dx 
                 options: 
                     command: 'force:user:permset:assign -n SustainabilityCloud'
-            7:
-                task: dx 
-                options: 
-                    command: 'shane:user:psl -l User -g Integration -n InsightsBuilderPsl'            
-            8:
-                task: dx 
-                options: 
-                    command: 'shane:user:permset:assign -l User -g Integration -n EinsteinAnalyticsUser'
-            9:
-                task: dx 
-                options: 
-                    command: 'shane:user:permset:assign -l User -g Integration -n SustainabilityAnalytics'                                     
+            #7:
+            #    task: dx 
+            #    options: 
+            #        command: 'shane:user:psl -l User -g Integration -n InsightsBuilderPsl'            
+            #8:
+            #    task: dx 
+            #    options: 
+            #        command: 'shane:user:permset:assign -l User -g Integration -n EinsteinAnalyticsUser'
+            #9:
+            #    task: dx 
+            #    options: 
+            #        command: 'shane:user:permset:assign -l User -g Integration -n SustainabilityAnalytics'                                     
     dev_org:        
         steps:
             0:
