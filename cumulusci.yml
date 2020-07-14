@@ -54,6 +54,22 @@ tasks:
         group: Sustainability
         options:
             path: scripts/Assign_SustainabilityCloud.apex
+
+    assign_insightsbuilder_permsetlicense:
+        description: Assign the InsightsBuilder permission set license
+        class_path: cumulusci.tasks.apex.anon.AnonymousApexTask 
+        group: Sustainability
+        options:
+            path: scripts/Assign_InsightsBuilderPsl.apex
+
+    assign_sustain_app_SustainabilityCloud_permsetlicense:
+        description: Assign the InsightsBuilder permission set license
+        class_path: cumulusci.tasks.apex.anon.AnonymousApexTask 
+        group: Sustainability
+        options:
+            path: scripts/Assign_InsightsBuilderPsl.apex
+
+
 flows:
     config_permsets:
         description: Assigns the required permsets to the admin user
@@ -66,7 +82,9 @@ flows:
                 task: assign_sustainabilityappmanager_permset
             4:
                 task: assign_sustainabilitycloud_permset
-            5:  
+            5:
+                task: assign_insightsbuilder_permsetlicense
+            6:  
                 task: load_dataset
     
     setup_Sust_Cloud_dev: 
