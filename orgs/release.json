@@ -4,7 +4,6 @@
   "features": ["SustainabilityCloud","AnalyticsAdminPerms","DevelopmentWave","EinsteinAnalyticsPlus"],
   "settings": {
     "analyticsSettings": {
-      "enableInsights": true,
       "enableWaveTemplate": true
   
   }
