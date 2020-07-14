@@ -19,8 +19,11 @@
         "forceRelogin": false
       }
     },
-    "languageSettings": {
-      "enableTranslationWorkbench": true
+    "analyticsSettings": {
+      "enableInsights": true
+    },
+    "analyticsSettings": {
+      "enableWaveTemplate": true
     }
   }
 }
