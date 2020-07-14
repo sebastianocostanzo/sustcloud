@@ -3,27 +3,10 @@
   "edition": "Enterprise",
   "features": ["SustainabilityCloud","AnalyticsAdminPerms","DevelopmentWave","EinsteinAnalyticsPlus"],
   "settings": {
-    "lightningExperienceSettings": {
-      "enableS1DesktopEnabled": true
-    },
-  
-    "chatterSettings": {
-      "enableChatter": true
-    },
-    "userManagementSettings": {
-      "enableNewProfileUI": true
-    },
-    "securitySettings": {
-      "enableAdminLoginAsAnyUser": true,
-      "sessionSettings": {
-        "forceRelogin": false
-      }
-    },
     "analyticsSettings": {
-      "enableInsights": true
-    },
-    "analyticsSettings": {
+      "enableInsights": true,
       "enableWaveTemplate": true
-    }
+  
   }
+}
 }

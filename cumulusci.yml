@@ -66,6 +66,8 @@ flows:
                 task: assign_sustainabilityappmanager_permset
             4:
                 task: assign_sustainabilitycloud_permset
+            5:  
+                task: load_dataset
     
     setup_Sust_Cloud_dev: 
         description: Installs package, assign permission sets to admin and loads some sample data
