@@ -22,34 +22,76 @@ tasks:
         options:
             path: robot/sustcloud/tests
             output: robot/sustcloud/doc/sustcloud_tests.html
+
+    assign_sustainabilityappauditor_permset:
+        description: Assign the Sustainability App Auditor permission set
+        class_path: cumulusci.tasks.apex.anon.AnonymousApexTask 
+        group: Sustainability
+        options:
+            path: scripts/Assign_SustainAbilityAppAuditor.apex
+
+    assign_sustainabilityanalytics_permset:
+        description: Assign the SustainabilityAnalytics permission set
+        class_path: cumulusci.tasks.apex.anon.AnonymousApexTask 
+        group: Sustainability
+        options:
+            path: scripts/Assign_SustainabilityAnalytics.apex
+    
+    assign_sustainabilityappmanager_permset:
+        description: Assign the SustainabilityAppManager permission set
+        class_path: cumulusci.tasks.apex.anon.AnonymousApexTask 
+        group: Sustainability
+        options:
+            path: scripts/Assign_SustainabilityAppManager.apex
+
+    assign_sustainabilitycloud_permset:
+        description: Assign the SustainabilityCloud permission set
+        class_path: cumulusci.tasks.apex.anon.AnonymousApexTask 
+        group: Sustainability
+        options:
+            path: scripts/Assign_SustainabilityCloud.apex
 flows:
-    setup_Sust_Cloud_dev: # using shane sfdx script
-        #description: https://github.com/mshanemc/sustainability/blob/master/orgInit.sh
+    config_permsets:
+        description: Assigns the required permsets to the admin user
+        steps:
+            1:
+                task: assign_sustainabilityanalytics_permset
+            2:
+                task: assign_sustainabilityappauditor_permset
+            3:
+                task: assign_sustainabilityappmanager_permset
+            4:
+                task: assign_sustainabilitycloud_permset
+    
+    setup_Sust_Cloud_dev: 
+        description: Installs package, assign permission sets to admin and loads some sample data
         steps:
             1:
                 task: dx 
                 options: 
                     command: 'force:package:install --package 04t3k000001yv66AAA -w 20'            
+            2: 
+                flow: config_permsets
             #2:
             #    task: dx 
             #    options: 
             #        command: 'shane:user:psl -l User -g User -n sustain_app_SustainabilityCloudPsl'
-            3:
-                task: dx 
-                options: 
-                    command: 'force:user:permset:assign -n SustainabilityAnalytics'            
-            4:
-                task: dx 
-                options: 
-                    command: 'force:user:permset:assign -n SustainabilityAppAuditor'
-            5:
-                task: dx 
-                options: 
-                    command: 'force:user:permset:assign -n SustainabilityAppManager'            
-            6:
-                task: dx 
-                options: 
-                    command: 'force:user:permset:assign -n SustainabilityCloud'
+            #3:
+            #    task: dx 
+            #    options: 
+            #        command: 'force:user:permset:assign -n SustainabilityAnalytics'            
+            #4:
+            #    task: dx 
+            #    options: 
+            #        command: 'force:user:permset:assign -n SustainabilityAppAuditor'
+            #5:
+            #    task: dx 
+            #    options: 
+            #        command: 'force:user:permset:assign -n SustainabilityAppManager'            
+            #6:
+            #    task: dx 
+            #    options: 
+            #        command: 'force:user:permset:assign -n SustainabilityCloud'
             #7:
             #    task: dx 
             #    options: 
@@ -111,6 +153,16 @@ plans:
         slug: install
         title: Install
         tier: primary
+        checks:
+            - when: "'EinsteinAnalyticsPlusPsl' not in tasks.get_available_psls()"
+              action: warn
+              message: "Please ensure you have Einstein Analytics Plus available prior to installing."
+        #checks
+        #    - when: "'EinsteinAnalyticsPlusPsl' not in tasks.get_available_psls() or 'EinsteinAnalyticsForCommunityLoginsPsl' not in tasks.get_available_psls()"
+        #      action: warn
+        #      message: "Please ensure you have Einstein Analytics Plus and Einstein Analytics for Community Logins licenses available prior to installing."
+        
+        
         steps:
             1:
                flow: setup_Sust_Cloud_dev 
