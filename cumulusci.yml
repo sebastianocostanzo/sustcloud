@@ -23,6 +23,10 @@ tasks:
             path: robot/sustcloud/tests
             output: robot/sustcloud/doc/sustcloud_tests.html
 
+    get_available_psls:
+        description: This preflight check examines available Permission Set Licenses in the org.
+        class_path: tasks.licenses_preflight.GetAvailablePermissionSetLicenses
+
     assign_sustainabilityappauditor_permset:
         description: Assign the Sustainability App Auditor permission set
         class_path: cumulusci.tasks.apex.anon.AnonymousApexTask 
