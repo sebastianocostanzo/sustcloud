@@ -84,7 +84,9 @@ flows:
                 task: assign_sustainabilitycloud_permset
             5:
                 task: assign_insightsbuilder_permsetlicense
-            6:  
+            6: 
+                task: assign_insightsbuilder_permsetlicense
+            7:  
                 task: load_dataset
     
     setup_Sust_Cloud_dev: 
