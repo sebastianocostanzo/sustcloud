@@ -70,15 +70,15 @@ flows:
     setup_Sust_Cloud_dev: 
         description: Installs package, assign permission sets to admin and loads some sample data
         steps:
-            0: 
+            1: 
                 task: org_settings
                 options: 
                     definition_file: 'orgs/release.json'
-            1:
+            2:
                 task: dx 
                 options: 
                     command: 'force:package:install --package 04t3k000001yv66AAA -w 20'            
-            2: 
+            3: 
                 flow: config_permsets
             #2:
             #    task: dx 
