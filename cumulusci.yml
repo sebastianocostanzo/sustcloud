@@ -76,18 +76,32 @@ flows:
         steps:
             1:
                 task: assign_sustainabilityanalytics_permset
+                ui_options:
+                    name: Assign Sustainability Analytics Permission Set 
             2:
                 task: assign_sustainabilityappauditor_permset
+                ui_options:
+                    name: Assign Sustainability App Auditor Permission Set
             3:
                 task: assign_sustainabilityappmanager_permset
+                ui_options:
+                    name: Assign Sustainability App Maanger Permission Set
             4:
                 task: assign_sustainabilitycloud_permset
+                ui_options:
+                    name: Assign Sustainability Cloud Permission Set
             5:
                 task: assign_insightsbuilder_permsetlicense
+                ui_options:
+                    name: Assign Einstein Analytics Permission Set license
             6: 
                 task: assign_sustain_app_SustainabilityCloud_permsetlicense
+                ui_options:
+                    name: Assign Sustainability Cloud Permission Set license
             7:  
                 task: load_dataset
+                ui_options:
+                    name: Load sample data set
     
     setup_Sust_Cloud_dev: 
         description: Installs package, assign permission sets to admin and loads some sample data
@@ -96,11 +110,20 @@ flows:
                 task: org_settings
                 options: 
                     definition_file: 'orgs/release.json'
+                ui_options:
+                    name: Enable Einstein Analytics Template 
             2:
                 task: dx 
                 options: 
-                    command: 'force:package:install --package 04t3k000001yv66AAA -w 20'            
+                    command: 'force:package:install --package 04t3k000001yv66AAA -w 20'
+                ui_options:
+                    name: Install Managed Package            
+            
             3: 
+                task: dx_push
+                ui_options:
+                    name: Deploy Unmanaged Source
+            4: 
                 flow: config_permsets
             #2:
             #    task: dx 
