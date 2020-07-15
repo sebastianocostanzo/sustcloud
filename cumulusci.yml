@@ -67,7 +67,7 @@ tasks:
         class_path: cumulusci.tasks.apex.anon.AnonymousApexTask 
         group: Sustainability
         options:
-            path: scripts/sustain_app_SustainabilityCloud.apex
+            path: scripts/Assign_SustCloudPSL.apex
 
 
 flows:
