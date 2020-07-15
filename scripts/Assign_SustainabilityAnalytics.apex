@@ -9,7 +9,7 @@ if (permSetCheck.size() == 0) {
 
 //add also Integration user
 string integrationUserId = [select id, username from User where profile.userlicense.name = 'Analytics Cloud Integration User' and name = 'Integration User'];
-List <PermissionSetAssignment> permSetCheck = [SELECT Id FROM PermissionSetAssignment WHERE PermissionSetId = : permSetId AND AssigneeId = : integrationUserId];
+permSetCheck = [SELECT Id FROM PermissionSetAssignment WHERE PermissionSetId = : permSetId AND AssigneeId = : integrationUserId];
 if (permSetCheck.size() == 0) {
     psa = new PermissionSetAssignment(PermissionSetId = permSetId, AssigneeId = integrationUserId);
     insert psa;
