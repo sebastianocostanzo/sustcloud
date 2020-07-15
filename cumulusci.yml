@@ -119,11 +119,19 @@ flows:
                 ui_options:
                     name: Install Managed Package            
             
-            3: 
-                task: dx_push
+            3:
+                task: dx_convert_from
+                ui_options:
+                    name: Convert Unmanaged Source
+            4:
+                task: update_package_xml
+                ui_options:
+                    name: Update package.xml
+            5:
+                task: deploy
                 ui_options:
                     name: Deploy Unmanaged Source
-            4: 
+            6: 
                 flow: config_permsets
             #2:
             #    task: dx 
