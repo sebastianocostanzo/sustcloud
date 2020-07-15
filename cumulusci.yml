@@ -53,7 +53,15 @@ tasks:
         class_path: cumulusci.tasks.apex.anon.AnonymousApexTask 
         group: Sustainability
         options:
-            path: scripts/Assign_SustCloudPSL.apex
+            path: scripts/Assign_SustainabilityCloud.apex
+    
+    assign_activieswaveadmin_permset:
+        description: Assign the Einstein Analytics for Sales Cloud permission set
+        class_path: cumulusci.tasks.apex.anon.AnonymousApexTask 
+        group: Sustainability
+        options:
+            path: scripts/Assign_ActivitiesWaveAdmin.apex
+
 
     assign_insightsbuilder_permsetlicense:
         description: Assign the InsightsBuilder permission set license
@@ -68,6 +76,13 @@ tasks:
         group: Sustainability
         options:
             path: scripts/Assign_SustCloudPSL.apex
+
+    assign_insightsinboxadminanalyticspsl_permsetlicense:
+        description: Einstein Analytics Template Administration Permission Set license
+        class_path: cumulusci.tasks.apex.anon.AnonymousApexTask 
+        group: Sustainability
+        options:
+            path: scripts/Assign_InsightsInboxAdminAnalyticsPsl.apex
 
 
 flows:
@@ -85,7 +100,7 @@ flows:
             3:
                 task: assign_sustainabilityappmanager_permset
                 ui_options:
-                    name: Assign Sustainability App Maanger Permission Set
+                    name: Assign Sustainability App Manager Permission Set
             4:
                 task: assign_sustainabilitycloud_permset
                 ui_options:
@@ -98,7 +113,16 @@ flows:
                 task: assign_sustain_app_SustainabilityCloud_permsetlicense
                 ui_options:
                     name: Assign Sustainability Cloud Permission Set license
-            7:  
+            
+            7: 
+                task: assign_insightsinboxadminanalyticspsl_permsetlicense
+                ui_options:
+                    name: Assign Einstein Analytics Template Administration Permission Set license   
+            8: 
+                task: assign_activieswaveadmin_permset
+                ui_options:
+                    name: Assign Einstein Analytics for Sales Cloud permission set
+            9:  
                 task: load_dataset
                 ui_options:
                     name: Load sample data set
@@ -133,6 +157,27 @@ flows:
                     name: Deploy Unmanaged Source
             6: 
                 flow: config_permsets
+
+            7: 
+                task: dx 
+                options: 
+                    command: 'plugins:install @salesforce/analytics'
+                ui_options:
+                    name: Install Analytics plugin
+
+            8:     
+                task: dx 
+                options: 
+                    command: 'analytics:app:create -f assets/Sustainability-EA.json'
+                ui_options:
+                    name: Create Einstein Analytics Sustainability app
+
+            9:     
+                task: dx 
+                options: 
+                    command: 'analytics:app:create -f assets/SustainabilityAudit-EA.json'
+                ui_options:
+                    name: Create Einstein Analytics Sustainability Audit app
             #2:
             #    task: dx 
             #    options: 
@@ -218,6 +263,9 @@ plans:
             - when: "'EinsteinAnalyticsPlusPsl' not in tasks.get_available_psls()"
               action: warn
               message: "Please ensure you have Einstein Analytics Plus available prior to installing."
+            - when: "'sustain_app_SustainabilityCloudPsl' not in tasks.get_available_psls()"
+              action: warn
+              message: "Please ensure you have Sustainability Cloud Permission Set license available prior to installing."
         #checks
         #    - when: "'EinsteinAnalyticsPlusPsl' not in tasks.get_available_psls() or 'EinsteinAnalyticsForCommunityLoginsPsl' not in tasks.get_available_psls()"
         #      action: warn
