@@ -142,7 +142,6 @@ flows:
                     command: 'force:package:install --package 04t3k000001yv66AAA -w 20'
                 ui_options:
                     name: Install Managed Package            
-            
             3:
                 task: dx_convert_from
                 ui_options:
@@ -157,27 +156,30 @@ flows:
                     name: Deploy Unmanaged Source
             6: 
                 flow: config_permsets
-
             7: 
                 task: dx 
                 options: 
                     command: 'plugins:install @salesforce/analytics'
                 ui_options:
-                    name: Install Analytics plugin
-
+                    name: Run Analytics plugin
             8:     
                 task: dx 
                 options: 
                     command: 'analytics:app:create -f assets/Sustainability-EA.json'
                 ui_options:
                     name: Create Einstein Analytics Sustainability app
-
             9:     
                 task: dx 
                 options: 
                     command: 'analytics:app:create -f assets/SustainabilityAudit-EA.json'
                 ui_options:
                     name: Create Einstein Analytics Sustainability Audit app
+            10:
+                task: deploy
+                options:
+                    path: assets/deployPostInstall
+                ui_options:
+                    name: Deploy Custom console app and Lightning Pages (FlexiPages)
             #2:
             #    task: dx 
             #    options: 
