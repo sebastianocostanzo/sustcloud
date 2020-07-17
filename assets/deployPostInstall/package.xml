@@ -10,5 +10,9 @@
         <members>Sustainability_Cloud_Lightning_Console_UtilityBar</members>
         <name>FlexiPage</name>
     </types>
+    <types>
+        <members>Admin</members>
+        <name>Profile</name>
+    </types>
     <version>48.0</version>
 </Package>

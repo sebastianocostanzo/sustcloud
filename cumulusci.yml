@@ -265,7 +265,7 @@ plans:
             - when: "'EinsteinAnalyticsPlusPsl' not in tasks.get_available_psls()"
               action: warn
               message: "Please ensure you have Einstein Analytics Plus available prior to installing."
-            - when: "'sustain_app_SustainabilityCloudPsl' not in tasks.get_available_psls()"
+            - when: "'sustain_app.SustainabilityCloudPsl' not in tasks.get_available_psls()"
               action: warn
               message: "Please ensure you have Sustainability Cloud Permission Set license available prior to installing."
         #checks
